@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hso‘s Gyros</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div>
+        <h1>Hso‘s <span>Gyros</span></h1>
+        <p>Telefon-Bestellsystem · Langenfeld NRW</p>
+      </div>
+      <div class="hero-badge">☎ Telefonbestellung</div>
+    </header>
+
+    <div class="layout">
+      <main class="panel">
+        <div class="tools">
+          <input id="searchInput" placeholder="Gericht suchen..." />
+          <select id="categorySelect"></select>
+        </div>
+
+        <div id="categoryTabs" class="tabs"></div>
+        <div id="menuContainer" class="menu"></div>
+      </main>
+
+      <aside class="panel order-panel">
+        <h2>Bestellung</h2>
+
+        <div class="form-grid">
+          <input id="customerName" placeholder="Name" />
+          <input id="customerPhone" placeholder="Telefonnummer" />
+          <input id="customerZip" value="40764" placeholder="PLZ" />
+
+          <div class="address-wrap">
+            <input id="customerAddress" placeholder="Straße und Hausnummer" autocomplete="off" />
+            <div id="addressSuggestions"></div>
+          </div>
+
+          <textarea id="orderNotes" placeholder="Notizen zur Bestellung"></textarea>
+        </div>
+
+        <div class="button-grid">
+          <button onclick="saveCustomer()">Stammkunde speichern</button>
+          <button class="dark" onclick="clearCustomerForm()">Formular leeren</button>
+        </div>
+
+        <h3>Stammkunden</h3>
+        <div id="savedCustomers" class="customers"></div>
+
+        <h3>Warenkorb</h3>
+        <div id="cartContainer"></div>
+
+        <div class="total">
+          <span>Gesamt</span>
+          <strong id="totalPrice">0,00 €</strong>
+        </div>
+
+        <button class="whatsapp" onclick="sendWhatsApp()">Per WhatsApp senden</button>
+        <button class="danger" onclick="clearCart()">Warenkorb löschen</button>
+      </aside>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
